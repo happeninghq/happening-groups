@@ -1,0 +1,19 @@
+{
+  "name": "happening-groups",
+  "version": "0.1.0",
+  "description": "happening-groups",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happeninghq/happening-groups.git"
+  },
+  "author": "Jonathan Scott <jonathan@jscott.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/happeninghq/happening-groups/issues"
+  },
+  "homepage": "https://github.com/happeninghq/happening-groups#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+}

@@ -1,7 +1,6 @@
 """Groups template blocks."""
 from happening.plugins import plugin_block
 from django.template.loader import render_to_string
-from django.template import RequestContext
 
 
 @plugin_block("events.event.secondary_navigation")
@@ -10,7 +9,7 @@ def event_secondary_navigation(request, secondary_nav, event):
     return render_to_string(
         "groups/blocks/events/event/secondary_navigation.html",
         {"secondary_nav": secondary_nav, "event": event},
-        context_instance=RequestContext(request))
+        request)
 
 
 @plugin_block("events.event.secondary_content")
@@ -19,7 +18,7 @@ def event_secondary_content(request, event):
     return render_to_string(
         "groups/blocks/events/event/secondary_content.html",
         {"event": event},
-        context_instance=RequestContext(request))
+        request)
 
 
 @plugin_block("staff.event.tickets.headers")

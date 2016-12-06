@@ -8,7 +8,7 @@ class Plugin(object):
 
     name = "Groups"
     url_root = "groups/"
-    staff_url_root = "groups/"
+    admin_url_root = "groups/"
 
 
 def generate_groups(ungrouped_users, number_of_groups, existing_groups=None):

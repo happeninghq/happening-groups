@@ -1,6 +1,6 @@
 """Group views."""
 from django.shortcuts import render, get_object_or_404, redirect
-from happening.utils import admin_required
+from happening.utils import require_permission
 from events.models import Event, Ticket
 from django.contrib import messages
 from .forms import GroupGenerationForm, GroupForm, ChangeGroupForm
@@ -40,7 +40,7 @@ def delete_existing_groups(event):
         group.delete()
 
 
-@admin_required
+@require_permission("manage_events")
 def generate_groups(request, pk):
     """Generate groups."""
     event = get_object_or_404(Event, pk=pk)
@@ -90,7 +90,7 @@ def generate_groups(request, pk):
                    "checked_in_attendees": checked_in_attendees})
 
 
-@admin_required
+@require_permission("manage_events")
 def view_groups(request, pk):
     """View groups."""
     event = get_object_or_404(Event, pk=pk)
@@ -98,7 +98,7 @@ def view_groups(request, pk):
                   {"event": event})
 
 
-@admin_required
+@require_permission("manage_events")
 def change_group(request, pk):
     """Change an attendee's group."""
     ticket = get_object_or_404(Ticket, pk=pk)
